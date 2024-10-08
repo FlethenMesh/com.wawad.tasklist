@@ -1,0 +1,36 @@
+package tasklist;
+
+import java.time.LocalDate;
+
+public class TaskListDemo {
+    public static void main(String[] args) {
+        // Initialize the DoublyLinkedNodeList to store Task objects
+        DoublyLinkedNodeList<Task> taskList = new DoublyLinkedNodeList<>();
+
+        // Create some Task objects
+        Task task1 = new Task("Complete Java Assignment", LocalDate.now(), LocalDate.of(2024, 10, 20), 1);
+        Task task2 = new Task("Prepare Presentation", LocalDate.now(), LocalDate.of(2024, 11, 5), 2);
+        Task task3 = new Task("Buy Groceries", LocalDate.now(), LocalDate.of(2024, 10, 6), 3);
+
+        // Add tasks to the list
+        System.out.println("Adding tasks to the list:");
+        taskList.add(task1);
+        taskList.add(task2);
+        taskList.add(task3);
+        System.out.println(taskList);
+
+        // Test find method
+        System.out.println("\nFinding 'Prepare Presentation' task:");
+        boolean found = taskList.find(task2);
+        System.out.println("Found: " + found);
+
+        // Test remove method
+        System.out.println("\nRemoving 'Buy Groceries' task:");
+        boolean removed = taskList.remove(task3);
+        System.out.println("Removed: " + removed);
+
+        // Print the updated list
+        System.out.println("\nTasks in the list after removal:");
+        System.out.println(taskList);
+    }
+}

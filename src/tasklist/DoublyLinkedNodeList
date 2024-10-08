@@ -1,5 +1,6 @@
-import ListInterface;
+package tasklist;
 
+import ListInterface;
 
 public class DoublyLinkedNodeList<T> extends Object implements ListInterface<T> {
 	
